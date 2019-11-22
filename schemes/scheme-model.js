@@ -31,10 +31,15 @@ function update(changes, id) {
         })
 }
 
+function remove(id) {
+    return db('schemes').where({id: id}).del();
+}
+
 module.exports = {
     find,
     findById,
     findSteps,
     add,
-    update
+    update,
+    remove
 };
